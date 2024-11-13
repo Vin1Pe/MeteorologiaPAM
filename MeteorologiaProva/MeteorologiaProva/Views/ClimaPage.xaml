@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MeteorologiaProva.Views.ClimaPage"
+             Title="MeteorologiaProva">
+    <VerticalStackLayout>
+        <Entry x:Name="LocationEntry"
+               Placeholder="Digite o nome de uma Cidade: "
+               Completed="LocationEntry_Completed"/>
+        <CollectionView ItemsSource="{Binding meteorologies}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding meteorologies.name}"/>
+                        <Label Text="{Binding meteorologies.timezone}"/>
+                        <Label Text="{Binding Data}" />
+                        <Label Text="{Binding Condicao_desc}" />
+                        <Label Text="{Binding Min}" />
+                        <Label Text="{Binding Max}" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
